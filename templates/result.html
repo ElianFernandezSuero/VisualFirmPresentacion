@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Resultado del Análisis</title>
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <title>Index - Nova Bootstrap Template</title>
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+      
+       <!-- Favicons -->
+      <link href="{{ url_for('static', filename='assets/img/favicon.png') }}" rel="icon">
+      <link href="{{ url_for('static', filename='assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+      
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com" rel="preconnect">
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+      
+        <!-- Vendor CSS Files -->
+      <link href="{{ url_for('static', filename='assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+      <link href="{{ url_for('static', filename='assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+      <link href="{{ url_for('static', filename='assets/vendor/aos/aos.css') }}" rel="stylesheet">
+      <link href="{{ url_for('static', filename='assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+      <link href="{{ url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+       <!-- Tailwind CSS CDN -->
+       <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+       <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+       <!-- Main CSS File -->
+      <link href="{{ url_for('static', filename='assets/css/main.css') }}" rel="stylesheet">
+      </head>
+    <style>
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+        }
+        .analysis-section {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+    </style>
+</head>
+
+<body class="index-page">
+    <header id="header" class="header d-flex align-items-center fixed-top" style="background: #17283b;">
+        <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+    
+            <a href="{{ url_for('home') }}" class="logo d-flex align-items-center" style="max-height: 50px;">
+                <img src="{{ url_for('static', filename='assets/img/logo.png') }}" alt="Logo">
+           <!-- <h1 class="sitename">VISUALFIRM</h1> -->
+          </a>
+    
+          <nav id="navmenu" class="navmenu">
+            <ul>
+                <li><a href="{{ url_for('home') }}" >Pagina Principal<br></a></li>
+          <li><a href="{{ url_for('about') }}">Acerca de</a></li>
+          <li><a href="{{ url_for('analisis') }}"class="active">Análisis de Archivos (ELA)</a></li>
+          <li><a href="{{ url_for('team') }}">Nuestro equipo</a></li>
+                <li class="dropdown"><a href="#"><span>Blog</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Guías y Tutoriales</a></li>
+                  <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                    <ul>
+                      <li><a href="#">Deep Dropdown 1</a></li>
+                      <li><a href="#">Deep Dropdown 2</a></li>
+                      <li><a href="#">Deep Dropdown 3</a></li>
+                      <li><a href="#">Deep Dropdown 4</a></li>
+                      <li><a href="#">Deep Dropdown 5</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">Preguntas Frecuentes ❓</a></li>
+                  
+                </ul>
+              </li>
+            </ul>
+            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+          </nav>
+    
+        </div>
+      </header>
+
+    <!-- Main CSS -->
+    <style>
+        .page-title {
+            background-size: cover;
+            background-position: center;
+            padding: 60px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .breadcrumbs ol {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .breadcrumbs a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .breadcrumbs .current {
+            color: #f0a500;
+        }
+
+        .image-section {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .probability-section {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        /* Scroll para tablas */
+        .table-responsive {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        table {
+            white-space: nowrap; /* Evita el salto de línea en celdas */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Encabezado -->
+    <header class="bg-gray-800 text-white py-3">
+        <div class="container text-center">
+            <h1>Resultado del Análisis</h1>
+        </div>
+    </header>
+
+    
+    <!-- End Page Title -->
+
+    <!-- Contenedor Principal -->
+    <div class="container mt-5">
+        <!-- Sección de Imágenes -->
+        <div class="row">
+            <div class="col-md-6 text-center">
+                <h2>Imagen Original</h2>
+                <img src="{{ url_for('uploaded_file', filename=original_image) }}" alt="Imagen Original" class="img-fluid">
+            </div>
+            <div class="col-md-6 text-center">
+                <h2>Imagen ELA</h2>
+                <img src="{{ url_for('ela_file', filename=ela_image) }}" alt="Imagen ELA" class="img-fluid">
+            </div>
+        </div>
+        
+
+        <!-- Probabilidades de Análisis -->
+        <div class="probability-section mt-4">
+            <h2 class="mb-3">Probabilidad de Análisis</h2>
+            <p><strong>Probabilidad de ser deepfake:</strong> {{ deepfake_prob }}%</p>
+            <p><strong>Probabilidad de ser auténtica:</strong> {{ authentic_prob }}%</p>
+            <p><strong>Resultado:</strong> <span class="text-lg font-bold">{{ result }}</span></p>
+        </div>
+
+        <!-- Metadata -->
+        <div class="mt-5">
+            <h2>Metadata</h2>
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Clave</th>
+                            <th>Valor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for key, value in metadata.items() %}
+                        <tr>
+                            <td>{{ key }}</td>
+                            <td>{{ value }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Geo Tags -->
+        <div class="mt-5">
+            <h2>Geo Tags</h2>
+            <div class="table-responsive">
+                {% if geo_tags %}
+                <table class="table table-striped table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Clave</th>
+                            <th>Valor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for key, value in geo_tags.items() %}
+                        <tr>
+                            <td>{{ key }}</td>
+                            <td>{{ value }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% else %}
+                <p class="text-center">No se encontraron Geo Tags en la imagen.</p>
+                {% endif %}
+            </div>
+        </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-3 mt-5">
+        <p>&copy; 2024 VisualFirm. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Vendor JS Files -->
+ <script src="{{ url_for('static', filename='assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+ <script src="{{ url_for('static', filename='assets/vendor/php-email-form/validate.js') }}"></script>
+ <script src="{{ url_for('static', filename='assets/vendor/aos/aos.js') }}"></script>
+ <script src="{{ url_for('static', filename='assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
+ <script src="{{ url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+ <script src="{{ url_for('static', filename='assets/vendor/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
+ <script src="{{ url_for('static', filename='assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+ 
+ <!-- Main JS File -->
+ <script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+ 
+</body>
+
+</html>
